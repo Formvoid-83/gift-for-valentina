@@ -94,3 +94,69 @@ li {
     font-size: 0.9rem;
     opacity: 0.7;
 }
+
+/* PINK BALLERINA THEME */
+body {
+    background: linear-gradient(180deg, #2b1b2f, #1f1423);
+    color: #fde7f3;
+}
+
+/* TABS */
+.tabs {
+    margin-top: 40px;
+}
+
+/* Hide radio buttons */
+.tabs input {
+    display: none;
+}
+
+/* TAB LABELS */
+.tab-labels {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.tab-labels label {
+    padding: 10px 18px;
+    border-radius: 20px;
+    background-color: rgba(255, 182, 193, 0.15);
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+/* Active tab */
+#tab-family:checked ~ .tab-labels label[for="tab-family"],
+#tab-dance:checked ~ .tab-labels label[for="tab-dance"],
+#tab-friends:checked ~ .tab-labels label[for="tab-friends"],
+#tab-style:checked ~ .tab-labels label[for="tab-style"],
+#tab-kid:checked ~ .tab-labels label[for="tab-kid"] {
+    background-color: #f7a8c9;
+    color: #2b1b2f;
+}
+
+/* TAB CONTENT */
+.tab-content {
+    display: none;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.tab-content img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* SHOW SELECTED TAB */
+#tab-family:checked ~ .family,
+#tab-dance:checked ~ .dance,
+#tab-friends:checked ~ .friends,
+#tab-style:checked ~ .style,
+#tab-kid:checked ~ .kid {
+    display: grid;
+}
+
