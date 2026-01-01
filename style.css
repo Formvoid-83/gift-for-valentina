@@ -192,6 +192,8 @@ li {
     display: none;
 }
 
+
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -203,4 +205,70 @@ li {
     }
 }
 
+/* FAVORITES TABS */
+.favorites-tabs {
+    margin-top: 40px;
+}
+
+.favorites-tabs input {
+    display: none;
+}
+
+/* CONTENT */
+.fav-content {
+    display: none;
+    margin-top: 30px;
+}
+
+/* MOVIES & BOOKS GRID */
+.fav-content.movies,
+.fav-content.books {
+    display: none;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.fav-content img {
+    width: 100%;
+    border-radius: 14px;
+    cursor: pointer;
+}
+
+/* SONGS (VIDEOS) */
+.fav-content.songs {
+    display: none;
+    display: grid;
+    gap: 30px;
+}
+
+.video {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(238, 6, 215, 0.99);
+}
+
+.video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* SHOW SELECTED FAVORITE TAB */
+#fav-movies:checked ~ .movies {
+    display: grid;
+}
+
+#fav-songs:checked ~ .songs {
+    display: grid;
+}
+
+#fav-books:checked ~ .books {
+    display: grid;
+}
 
