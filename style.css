@@ -7,11 +7,11 @@
 
 /* GLOBAL */
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: "Inter", system-ui, sans-serif;
     /*background: linear-gradient(180deg, #2b1b2f, #1f1423);*/
-    background-color:rgba(238, 6, 215, 0.99);
+    background-color:rgba(154, 15, 140, 0.99);
     color: #fde7f3;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 /* SECTIONS */
@@ -38,11 +38,26 @@ body {
 }
 
 /* HEADINGS */
+h1,h2,h3{
+    font-family: "Playfair Display", serif;
+    letter-spacing: 0.5px;
+}
+h1{
+    font-size: 3.2rem;
+}
 h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
+    position: relative;
     margin-bottom: 20px;
 }
-
+h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: rgba(247, 186, 211, 0.6);
+    margin-top: 12px;
+}
 h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
@@ -243,7 +258,7 @@ li {
 }
 
 .video {
-    position: relative;
+    position: relative; 
     padding-bottom: 56.25%; /* 16:9 */
     height: 0;
     overflow: hidden;
@@ -259,6 +274,19 @@ li {
     height: 100%;
     border: 0;
 }
+
+/* FADE-IN ON SCROLL */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 /* SHOW SELECTED FAVORITE TAB */
 #fav-movies:checked ~ .movies {
