@@ -49,24 +49,29 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 5000);
     }
 
-    if (!localStorage.getItem("birthdayShown")) {
         startConfetti();
-        localStorage.setItem("birthdayShown", "true");
-    }
 
     /* 🎵 MUSIC LOGIC */
     const music = document.getElementById("birthday-music");
     const overlay = document.getElementById("music-overlay");
     const playBtn = document.getElementById("play-music");
 
-    if (!localStorage.getItem("musicPlayed")) {
         overlay.classList.remove("hidden");
-    }
 
     playBtn.addEventListener("click", () => {
-        music.play();
+        music.volume = 0;
+    music.play();
+        
+    let v = 0;
+    const fade = setInterval(() => {
+        if (v < 0.6) {
+            v += 0.02;
+            music.volume = v;
+        } else {
+            clearInterval(fade);
+        }
+    }, 100);
         overlay.classList.add("hidden");
-        localStorage.setItem("musicPlayed", "true");
     });
 
 });

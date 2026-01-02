@@ -37,8 +37,6 @@ body::before {
     margin: 0 auto;
     padding: 60px 20px;
 
-    background: rgba(43, 27, 47, 0.6);
-    border-radius: 20px;
     backdrop-filter: blur(4px);
 }
 
