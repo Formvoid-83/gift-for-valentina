@@ -59,3 +59,17 @@ if (!localStorage.getItem("birthdayShown")) {
     startConfetti();
     localStorage.setItem("birthdayShown", "true");
 }
+
+const music = document.getElementById("birthday-music");
+const overlay = document.getElementById("music-overlay");
+const playBtn = document.getElementById("play-music");
+
+if (!localStorage.getItem("musicPlayed")) {
+    overlay.classList.remove("hidden");
+}
+
+playBtn.addEventListener("click", () => {
+    music.play();
+    overlay.classList.add("hidden");
+    localStorage.setItem("musicPlayed", "true");
+});
