@@ -301,3 +301,40 @@ li {
     display: grid;
 }
 
+/* CONFETTI */
+#confetti {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+/* MUSIC OVERLAY */
+.music-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(31, 20, 35, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.music-overlay button {
+    background: #f7a8c9;
+    color: #2b1b2f;
+    border: none;
+    padding: 16px 30px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: "Playfair Display", serif;
+}
+
+.music-overlay button:hover {
+    transform: scale(1.05);
+}
+
+.hidden {
+    display: none;
+}
