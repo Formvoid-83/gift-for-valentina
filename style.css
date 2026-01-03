@@ -241,7 +241,6 @@ li {
 /* FAVORITES TABS */
 .favorites-tabs {
     margin-top: 40px;
-    display: none;
 }
 
 .favorites-tabs input {
@@ -270,8 +269,7 @@ li {
 
 /* SONGS (VIDEOS) */
 .fav-content.songs {
-    display: none;
-    display: grid;
+    grid-template-columns: 1fr;
     gap: 30px;
 }
 
