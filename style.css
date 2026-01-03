@@ -241,6 +241,7 @@ li {
 /* FAVORITES TABS */
 .favorites-tabs {
     margin-top: 40px;
+    display: none;
 }
 
 .favorites-tabs input {
@@ -351,6 +352,30 @@ li {
 .music-overlay button:hover {
     transform: scale(1.05);
 }
+/* MUSIC BUTTON */
+.music-button {
+    margin-top: 20px;
+    background: #f7a8c9;
+    color: #2b1b2f;
+    border: none;
+    padding: 14px 30px;
+    font-size: 1.05rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: "Playfair Display", serif;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.music-button:hover {
+    transform: scale(1.05);
+}
+
+.music-button:disabled {
+    opacity: 0.5;
+    cursor: default;
+    transform: none;
+}
+
 
 .hidden {
     display: none;

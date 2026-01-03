@@ -46,32 +46,37 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
             clearInterval(interval);
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-        }, 5000);
+        }, 10000);
     }
 
         startConfetti();
 
     /* 🎵 MUSIC LOGIC */
     const music = document.getElementById("birthday-music");
-    const overlay = document.getElementById("music-overlay");
     const playBtn = document.getElementById("play-music");
-
-        overlay.classList.remove("hidden");
-
+    
     playBtn.addEventListener("click", () => {
+        if (!music.paused) return;
+    
         music.volume = 0;
-    music.play();
-        
-    let v = 0;
-    const fade = setInterval(() => {
-        if (v < 0.6) {
-            v += 0.02;
-            music.volume = v;
-        } else {
-            clearInterval(fade);
-        }
-    }, 100);
-        overlay.classList.add("hidden");
+        music.play();
+        playBtn.disabled = true;
+    
+        let v = 0;
+        const fade = setInterval(() => {
+            if (v < 0.6) {
+                v += 0.02;
+                music.volume = v;
+            } else {
+                clearInterval(fade);
+            }
+        }, 100);
     });
+    
+    /* When music finishes */
+    music.addEventListener("ended", () => {
+        playBtn.disabled = false;
+    });
+
 
 });
